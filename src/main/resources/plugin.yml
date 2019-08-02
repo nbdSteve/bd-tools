@@ -1,0 +1,8 @@
+name: BdTools
+version: ${project.version}
+main: dev.nuer.bd.tools.BdTools
+api-version: 1.13
+prefix: BdTools
+authors: [Nuer]
+description: Custom tools plugin developed for bubbleduppie
+website: https://nuer.dev
