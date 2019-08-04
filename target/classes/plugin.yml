@@ -1,5 +1,5 @@
 name: BdTools
-version: ${project.version}
+version: 0.0.2.1
 main: dev.nuer.bd.tools.BdTools
 api-version: 1.13
 prefix: BdTools

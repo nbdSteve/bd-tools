@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="bdtools">
+    <output-path>$USER_HOME$/Desktop/minecraft/server stuff/Server Files/plugins</output-path>
+    <root id="archive" name="bdtools.jar">
+      <element id="module-output" name="bd-tools" />
+    </root>
+  </artifact>
+</component>

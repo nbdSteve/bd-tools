@@ -1,6 +1,8 @@
 package dev.nuer.bd.tools.managers;
 
 import dev.nuer.bd.tools.BdTools;
+import dev.nuer.bd.tools.cmd.BdtCmd;
+import dev.nuer.bd.tools.tools.inventory.InventoryToolHandler;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 
@@ -26,9 +28,11 @@ public class SetupManager {
      */
     public static void registerEvents(Plugin instance) {
         PluginManager pm = instance.getServer().getPluginManager();
+        pm.registerEvents(new ToolManager(), instance);
+        pm.registerEvents(new InventoryToolHandler(), instance);
     }
 
     public static void registerCommands(BdTools instance) {
-        instance.getCommand("bd-tools").setExecutor(new BdTools());
+        instance.getCommand("bd-tools").setExecutor(new BdtCmd());
     }
 }

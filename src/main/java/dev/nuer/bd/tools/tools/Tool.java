@@ -44,11 +44,11 @@ public class Tool {
     public void givePlayer(Player player, String material, String dataValue) {
         ItemBuilderUtil item = new ItemBuilderUtil(material, dataValue);
         YamlConfiguration config = FileManager.get("config");
-        item.addName(config.getString("tools." + config + ".name"));
-        item.addLore(config.getStringList("tools." + config + ".lore"));
-        item.addEnchantments(config.getStringList("tools." + config + ".enchantments"));
-        item.addItemFlags(config.getStringList("tools." + config + ".item-flags"));
-        item.addNBT(configID, type);
+        item.addName(config.getString("tools." + this.configID + ".name"));
+        item.addLore(config.getStringList("tools." + this.configID + ".lore"));
+        item.addEnchantments(config.getStringList("tools." + this.configID + ".enchantments"));
+        item.addItemFlags(config.getStringList("tools." + this.configID + ".item-flags"));
+        item.addNBT(this.configID, type);
         player.getInventory().addItem(item.getNbtItem().getItem());
     }
 

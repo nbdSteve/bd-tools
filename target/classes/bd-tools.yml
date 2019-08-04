@@ -1,0 +1,44 @@
+number-of-tools: 3
+
+tools:
+  1:
+    type: 'inventory'
+    uuid: 'inventory-tool_1'
+    look-time: 10
+    reuse-delay: 60
+    name: '&6Inventory Wand'
+    lore:
+      - '&7 '
+      - '&7test'
+    enchantments:
+      - 'durability:10'
+    item-flags:
+  #
+  2:
+    type: 'jail'
+    uuid: 'jail-tool_1'
+    reuse-delay: 60
+    banned-items:
+      - 'diamond:0'
+      - 'blaze_rod:0'
+      - 'stone:3'
+    name: '&6Jail Wand'
+    lore:
+      - '&7 '
+      - '&7test'
+    enchantments:
+      - 'durability:10'
+    item-flags:
+  #
+  3:
+    type: 'blindness'
+    uuid: 'blindness-tool_1'
+    effect-radius: 10
+    reuse-delay: 60
+    name: '&6Blindness Wand'
+    lore:
+      - '&7 '
+      - '&7test'
+    enchantments:
+      - 'durability:10'
+    item-flags:

@@ -1,6 +1,6 @@
 package dev.nuer.bd.tools.support.nbtapi;
 
-import dev.nuer.tp.support.nbtapi.utils.MinecraftVersion;
+import dev.nuer.bd.tools.support.nbtapi.utils.MinecraftVersion;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.InputStream;

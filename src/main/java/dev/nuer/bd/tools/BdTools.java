@@ -2,6 +2,7 @@ package dev.nuer.bd.tools;
 
 import dev.nuer.bd.tools.managers.FileManager;
 import dev.nuer.bd.tools.managers.SetupManager;
+import dev.nuer.bd.tools.managers.ToolManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
@@ -19,6 +20,7 @@ public final class BdTools extends JavaPlugin {
         SetupManager.setupFiles(new FileManager(instance));
         SetupManager.registerCommands(instance);
         SetupManager.registerEvents(instance);
+        new ToolManager();
         log.info("Thanks for getting private development! If you find any bugs please contact nbdSteve#0583 on discord.");
     }
 
