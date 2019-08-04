@@ -42,7 +42,7 @@ public class ToolManager implements Listener {
     @EventHandler
     public void toolEvent(EntityDamageByEntityEvent event) {
         if (event.isCancelled()) return;
-        if (!(event.getDamager() instanceof Player || event.getEntity() instanceof Player)) return;
+        if (!(event.getDamager() instanceof Player && event.getEntity() instanceof Player)) return;
         Player damager = (Player) event.getDamager();
         Player player = (Player) event.getEntity();
         if (damager.getItemInHand().getType().equals(Material.AIR)
