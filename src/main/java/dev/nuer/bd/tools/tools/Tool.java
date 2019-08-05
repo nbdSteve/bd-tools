@@ -31,7 +31,7 @@ public class Tool {
                 effectAttributes = new ArrayList<>();
                 effectAttributes.add(FileManager.get("config").getInt("tools." + configID + ".effect.radius"));
                 effectAttributes.add(FileManager.get("config").getInt("tools." + configID + ".effect.duration"));
-                effectAttributes.add(FileManager.get("config").getInt("tools." + configID + ".effect.amplifier"));
+                effectAttributes.add(FileManager.get("config").getInt("tools." + configID + ".effect.amplifier") - 1);
                 break;
             case JAIL:
                 this.bannedItems = new HashMap<>();

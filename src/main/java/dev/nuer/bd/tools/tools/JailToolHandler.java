@@ -12,12 +12,13 @@ public class JailToolHandler {
 
     public static void onEvent(Player player, Player damager, Tool tool) {
         ArrayList<ItemStack> items = null;
-        if (PlayerCooldownUtil.isOnCooldown(player, "jail")) {
-            PlayerCooldownUtil.getCooldownRemaining(player, "jail", true);
+        if (PlayerCooldownUtil.isOnCooldown(damager, "jail")) {
+            PlayerCooldownUtil.getCooldownRemaining(damager, "jail", true);
             return;
         }
         for (ItemStack stack : player.getInventory().getContents()) {
             for (Material material : tool.getBannedItems().keySet()) {
+                if (stack == null || stack.getType().equals(Material.AIR)) continue;
                 if (stack.getType().equals(material) && stack.getDurability() == tool.getBannedItems().get(material)) {
                     if (items == null) items = new ArrayList<>();
                     player.getInventory().remove(stack);
@@ -26,7 +27,7 @@ public class JailToolHandler {
             }
         }
         if (items == null) return;
-        PlayerCooldownUtil.setPlayerOnCooldown(player, tool.getDelay(), "jail");
+        PlayerCooldownUtil.setPlayerOnCooldown(damager, tool.getDelay(), "jail");
         CommandExecutionUtil.execute(tool, player);
     }
 }

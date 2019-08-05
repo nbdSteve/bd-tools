@@ -18,11 +18,11 @@ public class InventoryToolHandler implements Listener {
     public static Map<UUID, Inventory> playersViewing = new HashMap<>();
 
     public static void onEvent(Player player, Player damager, Tool tool) {
-        if (PlayerCooldownUtil.isOnCooldown(player, "inventory")) {
-            PlayerCooldownUtil.getCooldownRemaining(player, "inventory", true);
+        if (PlayerCooldownUtil.isOnCooldown(damager, "inventory")) {
+            PlayerCooldownUtil.getCooldownRemaining(damager, "inventory", true);
             return;
         }
-        PlayerCooldownUtil.setPlayerOnCooldown(player, tool.getDelay(), "inventory");
+        PlayerCooldownUtil.setPlayerOnCooldown(damager, tool.getDelay(), "inventory");
         CommandExecutionUtil.execute(tool, player);
         damager.openInventory(player.getInventory());
         playersViewing.put(damager.getUniqueId(), player.getInventory());

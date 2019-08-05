@@ -40,8 +40,8 @@ tools:
     reuse-delay: 60
     effect:
       radius: 10
-      duration: 5
-      amplifier: 3
+      duration: 100 #in ticks
+      amplifier: 2
     commands:
     name: '&6Blindness Wand'
     lore:

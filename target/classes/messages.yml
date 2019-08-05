@@ -4,8 +4,7 @@ help:
 reload:
   - '&b&lBdTools&3: &7You have successfully reloaded all configuration files & internal maps for the plugin.'
 
-cooldown-action-bar:
-  - '&b&lBdTools&3: &7Your &c{tool-type} &7has &e{time} &7seconds cooldown.'
+cooldown-action-bar: '&b&lBdTools&3: &7Your &c{tool-type} &7has &e{time} &7seconds cooldown.'
 
 permission-debug:
   - '&b&lBdTools&3: &fPermission Debug'

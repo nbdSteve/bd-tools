@@ -60,7 +60,7 @@ public class ToolManager implements Listener {
                 InventoryToolHandler.onEvent(player, damager, tool);
                 break;
             case BLINDNESS:
-                BlindnessToolHandler.onEvent(player, tool);
+                BlindnessToolHandler.onEvent(damager, tool);
                 break;
             case JAIL:
                 JailToolHandler.onEvent(player, damager, tool);

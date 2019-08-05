@@ -7,30 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="131d5180-133d-4311-a4fc-864b085f0313" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/JailToolHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/utils/CommandExecutionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/managers/SetupManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/managers/SetupManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/managers/ToolManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/managers/ToolManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/BlindnessToolHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/BlindnessToolHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/InventoryToolHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/InventoryToolHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/JailToolHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/JailToolHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/Tool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/blindness/BlindnessToolHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/BlindnessToolHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/inventory/InventoryToolHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/tools/InventoryToolHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/utils/PlayerCooldownUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/nuer/bd/tools/utils/PlayerCooldownUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/bd-tools.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bd-tools.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/messages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/BdTools-0.0.2.1-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/BdTools-0.0.2.1-shaded.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/BdTools-0.0.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/BdTools-0.0.2.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bd-tools.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bd-tools.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/managers/SetupManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/managers/SetupManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/managers/ToolManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/managers/ToolManager$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/managers/ToolManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/managers/ToolManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/Tool$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/Tool$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/BlindnessToolHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/BlindnessToolHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/InventoryToolHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/InventoryToolHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/JailToolHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/JailToolHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/Tool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/Tool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/blindness/BlindnessToolHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/nuer/bd/tools/tools/inventory/InventoryToolHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/messages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-BdTools-0.0.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-BdTools-0.0.2.1.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
