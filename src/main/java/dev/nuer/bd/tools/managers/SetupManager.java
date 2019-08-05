@@ -2,7 +2,7 @@ package dev.nuer.bd.tools.managers;
 
 import dev.nuer.bd.tools.BdTools;
 import dev.nuer.bd.tools.cmd.BdtCmd;
-import dev.nuer.bd.tools.tools.inventory.InventoryToolHandler;
+import dev.nuer.bd.tools.tools.InventoryToolHandler;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 

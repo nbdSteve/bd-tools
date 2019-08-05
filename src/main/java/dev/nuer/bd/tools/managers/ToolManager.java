@@ -2,9 +2,7 @@ package dev.nuer.bd.tools.managers;
 
 import dev.nuer.bd.tools.BdTools;
 import dev.nuer.bd.tools.support.nbtapi.NBTItem;
-import dev.nuer.bd.tools.tools.Tool;
-import dev.nuer.bd.tools.tools.ToolType;
-import dev.nuer.bd.tools.tools.inventory.InventoryToolHandler;
+import dev.nuer.bd.tools.tools.*;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -33,7 +31,8 @@ public class ToolManager implements Listener {
         for (int i = 1; i <= FileManager.get("config").getInt("number-of-tools"); i++) {
             Tool tool = new Tool(i,
                     ToolType.valueOf(FileManager.get("config").getString("tools." + i + ".type").toUpperCase()),
-                    FileManager.get("config").getInt("tools." + i + ".reuse-delay"));
+                    FileManager.get("config").getInt("tools." + i + ".reuse-delay"),
+                    FileManager.get("config").getStringList("tools." + i + ".commands"));
             tools.put(i, tool);
         }
         BdTools.log.info("Successfully loaded all tools into internal configuration.");
@@ -55,14 +54,16 @@ public class ToolManager implements Listener {
             return;
         }
         event.setCancelled(true);
+        Tool tool = getToolByID(item.getInteger("bd-tools.config-id"));
         switch (item.getObject("bd-tools.type", ToolType.class)) {
             case INVENTORY:
-                InventoryToolHandler.onEvent(player, damager);
+                InventoryToolHandler.onEvent(player, damager, tool);
                 break;
             case BLINDNESS:
-
+                BlindnessToolHandler.onEvent(player, tool);
                 break;
             case JAIL:
+                JailToolHandler.onEvent(player, damager, tool);
                 break;
             default:
                 break;

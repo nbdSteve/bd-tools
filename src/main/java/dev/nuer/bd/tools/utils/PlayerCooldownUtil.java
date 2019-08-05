@@ -15,7 +15,9 @@ import java.util.UUID;
  */
 public class PlayerCooldownUtil {
     //Store the players who are on the blindness tool cooldown
+    private static HashMap<UUID, Integer> playersOnInventoryCooldown = new HashMap<>();
     private static HashMap<UUID, Integer> playersOnBlindnessCooldown = new HashMap<>();
+    private static HashMap<UUID, Integer> playersOnJailCooldown = new HashMap<>();
 
     /**
      * Sets the respective player on the respective cooldown
@@ -72,10 +74,10 @@ public class PlayerCooldownUtil {
      */
     public static int getCooldownRemaining(Player player, String cooldownToolType, boolean sendPlayerResponse) {
         if (sendPlayerResponse) {
-            if (FileManager.get("config").getBoolean("cooldown-action-bar.enabled")) {
-                String message = FileManager.get("config").getString("cooldown-action-bar.message")
+            if (FileManager.get("config").getBoolean("cooldown-action-bar-enabled")) {
+                String message = FileManager.get("messages").getString("cooldown-action-bar")
                         .replace("{time}", String.valueOf(getCooldownMap(cooldownToolType).get(player.getUniqueId())))
-                                .replace("{tool-type}", cooldownToolType + " wand");
+                                .replace("{tool-type}", cooldownToolType + " tool");
                 ActionBarAPI.sendActionBar(player, ColorUtil.colorize(message));
             } else {
                 MessageUtil.message("messages", "tool-cooldown", Bukkit.getPlayer(player.getUniqueId())
@@ -92,7 +94,9 @@ public class PlayerCooldownUtil {
      * @return HashMap<UUID, Integer>
      */
     public static HashMap<UUID, Integer> getCooldownMap(String cooldownToolType) {
+        if (cooldownToolType.equalsIgnoreCase("inventory")) return playersOnInventoryCooldown;
         if (cooldownToolType.equalsIgnoreCase("blindness")) return playersOnBlindnessCooldown;
+        if (cooldownToolType.equalsIgnoreCase("jail")) return playersOnJailCooldown;
         return null;
     }
 }

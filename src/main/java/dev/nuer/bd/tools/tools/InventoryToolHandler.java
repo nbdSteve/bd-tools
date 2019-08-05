@@ -1,5 +1,8 @@
-package dev.nuer.bd.tools.tools.inventory;
+package dev.nuer.bd.tools.tools;
 
+import dev.nuer.bd.tools.tools.Tool;
+import dev.nuer.bd.tools.utils.CommandExecutionUtil;
+import dev.nuer.bd.tools.utils.PlayerCooldownUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,7 +17,13 @@ import java.util.UUID;
 public class InventoryToolHandler implements Listener {
     public static Map<UUID, Inventory> playersViewing = new HashMap<>();
 
-    public static void onEvent(Player player, Player damager) {
+    public static void onEvent(Player player, Player damager, Tool tool) {
+        if (PlayerCooldownUtil.isOnCooldown(player, "inventory")) {
+            PlayerCooldownUtil.getCooldownRemaining(player, "inventory", true);
+            return;
+        }
+        PlayerCooldownUtil.setPlayerOnCooldown(player, tool.getDelay(), "inventory");
+        CommandExecutionUtil.execute(tool, player);
         damager.openInventory(player.getInventory());
         playersViewing.put(damager.getUniqueId(), player.getInventory());
     }

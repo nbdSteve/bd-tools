@@ -1,6 +1,7 @@
-package dev.nuer.bd.tools.tools.blindness;
+package dev.nuer.bd.tools.tools;
 
 import dev.nuer.bd.tools.tools.Tool;
+import dev.nuer.bd.tools.utils.CommandExecutionUtil;
 import dev.nuer.bd.tools.utils.PlayerCooldownUtil;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -15,9 +16,14 @@ public class BlindnessToolHandler {
             return;
         }
         PlayerCooldownUtil.setPlayerOnCooldown(player, tool.getDelay(), "blindness");
-        for (Entity e : player.getNearbyEntities(tool.getElement(), tool.getElement(), tool.getElement())) {
+        CommandExecutionUtil.execute(tool, player);
+        int radius = tool.getEffectAttributes().get(0);
+        int duration = tool.getEffectAttributes().get(1);
+        int amplifier = tool.getEffectAttributes().get(2);
+        for (Entity e : player.getNearbyEntities(radius, radius, radius)) {
             if (!(e instanceof Player)) continue;
-            ((Player) e).addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10, 5));
+            ((Player) e).removePotionEffect(PotionEffectType.BLINDNESS);
+            ((Player) e).addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, duration, amplifier));
         }
     }
 }

@@ -1,32 +1,37 @@
 package dev.nuer.bd.tools.tools;
 
+import com.sun.org.apache.xerces.internal.xs.StringList;
 import dev.nuer.bd.tools.managers.FileManager;
 import dev.nuer.bd.tools.utils.ItemBuilderUtil;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Tool {
     private int configID;
     private ToolType type;
     private int delay;
-    private int element;
+    private ArrayList<Integer> effectAttributes;
     private HashMap<Material, Short> bannedItems;
+    private ArrayList<String> commands;
 
-    public Tool(int configID, ToolType type, int delay) {
+    public Tool(int configID, ToolType type, int delay, List<String> commands) {
         //Store instance variables
         this.configID = configID;
         this.type = type;
         this.delay = delay;
+        this.commands = new ArrayList<>(commands);
         //Run switch for different tool types
         switch (type) {
-            case INVENTORY:
-                this.element = FileManager.get("config").getInt("tools." + configID + ".look-time");
-                break;
             case BLINDNESS:
-                this.element = FileManager.get("config").getInt("tools." + configID + ".effect-radius");
+                effectAttributes = new ArrayList<>();
+                effectAttributes.add(FileManager.get("config").getInt("tools." + configID + ".effect.radius"));
+                effectAttributes.add(FileManager.get("config").getInt("tools." + configID + ".effect.duration"));
+                effectAttributes.add(FileManager.get("config").getInt("tools." + configID + ".effect.amplifier"));
                 break;
             case JAIL:
                 this.bannedItems = new HashMap<>();
@@ -36,7 +41,6 @@ public class Tool {
                 }
                 break;
             default:
-                this.element = -69;
                 break;
         }
     }
@@ -64,11 +68,15 @@ public class Tool {
         return delay;
     }
 
-    public int getElement() {
-        return element;
+    public ArrayList<Integer> getEffectAttributes() {
+        return effectAttributes;
     }
 
     public HashMap<Material, Short> getBannedItems() {
         return bannedItems;
+    }
+
+    public ArrayList<String> getCommands() {
+        return commands;
     }
 }
