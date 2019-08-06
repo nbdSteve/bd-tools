@@ -6,7 +6,7 @@ tools:
   1:
     type: 'inventory'
     uuid: 'inventory-tool_1'
-    reuse-delay: 60
+    reuse-delay: 10
     commands:
     name: '&6Inventory Wand'
     lore:
@@ -19,13 +19,14 @@ tools:
   2:
     type: 'jail'
     uuid: 'jail-tool_1'
-    reuse-delay: 60
+    reuse-delay: 10
     banned-items:
       - 'diamond:0'
       - 'blaze_rod:0'
       - 'stone:3'
     commands:
-      - 'kill {player}'
+      # Add jail command here
+      - 'say Hey {player}, this is a example command.'
     name: '&6Jail Wand'
     lore:
       - '&7 '
@@ -37,7 +38,7 @@ tools:
   3:
     type: 'blindness'
     uuid: 'blindness-tool_1'
-    reuse-delay: 60
+    reuse-delay: 10
     effect:
       radius: 10
       duration: 100 #in ticks
